@@ -3,7 +3,7 @@
   <div class="my-footer">
     <!-- 全选 -->
     <div class="custom-control custom-checkbox">
-      <input type="checkbox" class="custom-control-input" id="footerCheck" v-model="isAll">
+      <input type="checkbox" class="custom-control-input" id="footerCheck"  v-model="isAll">
       <label class="custom-control-label" for="footerCheck">全选</label>
     </div>
     <!-- 合计 -->
@@ -36,6 +36,11 @@ export default {
   props: {
     arr: Array
   },
+  methods:{
+    change(event){
+      this.$emit('changeAll', event.target.checked)
+    }
+  },
   computed: {
     isAll: {
       set(val){ // val就是关联表单的值(true/false)
@@ -47,17 +52,17 @@ export default {
         return this.arr.every(obj => obj.goods_state === true)
       }
     },
-    allCount(){
-     return this.arr.reduce((sum, obj) => {
+    allCount() {
+      return this.arr.reduce((sum, obj) => {
         if (obj.goods_state === true) { // 选中商品才累加数量
           sum += obj.goods_count;
         }
         return sum;
       }, 0)
     },
-    allPrice(){
+    allPrice() {
       return this.arr.reduce((sum, obj) => {
-        if (obj.goods_state){
+        if (obj.goods_state) {
           sum += obj.goods_count * obj.goods_price
         }
         return sum;
@@ -86,6 +91,7 @@ export default {
     font-weight: bold;
     font-size: 15px;
   }
+
   .footer-btn {
     min-width: 80px;
     height: 30px;

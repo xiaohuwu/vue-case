@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import router from './router'
 import "bootstrap/dist/css/bootstrap.css" // 引入第三方包里的某个css文件
 
 Vue.config.productionTip = false
@@ -13,5 +14,6 @@ axios.defaults.baseURL = "https://6da9fd4f-9bb4-496e-804f-a95cba948722.mock.pstm
 Vue.prototype.$axios = axios
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
+    router,
 }).$mount('#app')

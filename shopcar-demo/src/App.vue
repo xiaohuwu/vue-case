@@ -1,10 +1,12 @@
 <template>
-  <div>
-    <MyHeader title="购物车案例"></MyHeader>
-    <div class="main">
-      <MyGoods v-for="obj in list" :key="obj.id" :gObj="obj" @update-goods-count="handleUpdateCount"></MyGoods>
-    </div>
-    <MyFooter @changeAll="allFn" :arr="list"></MyFooter>
+  <div id="app">
+    <router-view/>
+        <MyHeader title="购物车案例"></MyHeader>
+        <div class="main">
+          <MyGoods v-for="obj in list" :key="obj.id" :gObj="obj" @update-goods-count="handleUpdateCount"></MyGoods>
+        </div>
+        <MyFooter @changeAll="allFn" :arr="list"></MyFooter>
+
   </div>
 </template>
 
@@ -23,6 +25,7 @@
 import MyHeader from './components/MyHeader'
 import MyGoods from './components/MyGoods'
 import MyFooter from './components/MyFooter'
+
 export default {
   components: {
     MyHeader,
@@ -43,8 +46,8 @@ export default {
     //   this.list =  [...res.data,
     //      ];
     // })
-    this.list = [{ "goods_state": true, "goods_name": "商品2", "goods_price": 30, "goods_count": 1, id: 1 },
-    { "goods_state": true, "goods_name": "商品1", "goods_price": 20, "goods_count": 3, id: 2 }
+    this.list = [{"goods_state": true, "goods_name": "商品2", "goods_price": 30, "goods_count": 1, id: 1},
+      {"goods_state": true, "goods_name": "商品1", "goods_price": 20, "goods_count": 3, id: 2}
     ]
   },
   methods: {

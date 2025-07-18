@@ -12,8 +12,9 @@
     "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
     "less": "^4.1.1",
-    "less-loader": "5.0.0",
-    "vue": "^2.6.11"
+    "less-loader": "^6.0.0",
+    "vue": "^2.7.16",
+    "vue-router": "^3.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
