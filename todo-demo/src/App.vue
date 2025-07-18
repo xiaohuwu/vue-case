@@ -3,8 +3,7 @@
     <TodoHeader :arr="list" @create="createFn"></TodoHeader>
     <TodoMain  :arr="showArr" @del="deleteFn"></TodoMain>
     <TodoFooter :farr="showArr" @changeType="typeFn"
-    @clear="clearFun"
-    ></TodoFooter>
+    @clear="clearFun" ></TodoFooter>
   </div>
 </template>
 
